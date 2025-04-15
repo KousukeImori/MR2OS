@@ -527,6 +527,7 @@ GameObject:
   - component: {fileID: 251669658}
   - component: {fileID: 251669657}
   - component: {fileID: 251669656}
+  - component: {fileID: 251669659}
   m_Layer: 5
   m_Name: CanvasJoy
   m_TagString: Untagged
@@ -617,6 +618,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &251669659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251669654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653b4621d3f350f4c94788e20a734b68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topicName: crawler_ctrl
+  inputMove: {fileID: 1814808924}
 --- !u!1001 &301211224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1825,6 +1840,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
   m_PrefabInstance: {fileID: 1690600964}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1814808924 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+  m_PrefabInstance: {fileID: 1690600964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1948768664
 GameObject:
   m_ObjectHideFlags: 0
