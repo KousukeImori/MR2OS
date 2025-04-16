@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 15003, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: "New Android\u2122 Profile"
+  m_Name: "New Android\u2122 Profile 1"
   m_EditorClassIdentifier: 
   m_AssetVersion: 1
   m_BuildTarget: 13
   m_Subtarget: 0
   m_PlatformId: b9b35072a6f44c2e863f17467ea3dc13
   m_PlatformBuildProfile:
-    rid: 1517596853782184142
+    rid: 1517596886209396815
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
@@ -169,6 +169,14 @@ MonoBehaviour:
     - line: '|   preloadedAssets:'
     - line: '|   - {fileID: 11400000, guid: f8a442de0c8906f4d9c00184993fc289, type:
         2}'
+    - line: '|   - {fileID: 11400000, guid: d000b3585d6cfac4184ff78803f857b9, type:
+        2}'
+    - line: '|   - {fileID: 11400000, guid: 56a98106ce58f09459a9990007b50acb, type:
+        2}'
+    - line: '|   - {fileID: -8196854396901781169, guid: 1a4c68ca72a83449f938d669337cb305,
+        type: 2}'
+    - line: '|   - {fileID: 8719693052439873982, guid: 136958f90a130274b8b70a31eed352fb,
+        type: 2}'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
     - line: '|   m_HolographicPauseOnTrackingLoss: 1'
@@ -911,7 +919,7 @@ MonoBehaviour:
     - line: '|   webGLCloseOnQuit: 0'
     - line: '|   webWasm2023: 0'
     - line: '|   scriptingDefineSymbols:'
-    - line: '|     Android: USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS;ISDK_OPENXR_HAND;ROS2'
+    - line: '|     Android: USE_STICK_CONTROL_THUMBSTICKS;ROS2'
     - line: '|     Standalone: USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS;ISDK_OPENXR_HAND'
     - line: '|     Windows Store Apps: USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS'
     - line: '|     iPhone: ROS2'
@@ -1020,7 +1028,13 @@ MonoBehaviour:
     - line: '|   windowsGamepadBackendHint: 0'
     - line: '|   cloudProjectId: 49d7d3e7-9ce4-4b7c-8d7f-60c521217496'
     - line: '|   framebufferDepthMemorylessMode: 0'
-    - line: '|   qualitySettingsNames: []'
+    - line: '|   qualitySettingsNames:'
+    - line: '|   - Very Low'
+    - line: '|   - Low'
+    - line: '|   - Medium'
+    - line: '|   - High'
+    - line: '|   - Very High'
+    - line: '|   - Ultra'
     - line: '|   projectName: MR2OS 2025-03-27_10-09-41'
     - line: '|   organizationId: imorik'
     - line: '|   cloudEnabled: 0'
@@ -1035,7 +1049,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1517596853782184142
+    - rid: 1517596886209396815
       type: {class: AndroidPlatformBuildSettings, ns: UnityEditor.Android, asm: UnityEditor.Android.Extensions}
       data:
         m_Development: 0
@@ -1047,9 +1061,9 @@ MonoBehaviour:
         m_ExplicitNullChecks: 0
         m_ExplicitDivideByZeroChecks: 0
         m_ExplicitArrayBoundsChecks: 0
-        m_CompressionType: 0
+        m_CompressionType: 2
         m_InstallInBuildFolder: 0
-        m_BuildSubtarget: 6
+        m_BuildSubtarget: 0
         m_BuildSystem: 1
         m_ExportAsGoogleAndroidProject: 0
         m_DebugSymbolLevel: 1

@@ -23,69 +23,87 @@ public class JoystiickRobotCtrl : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (inputMove.Vertical == 0)
+            if(inputMove.Horizontal == 0)
+            {
+                Debug.Log("stop");
+                RightMotorStop();
+                LeftMotorStop()
+;            }
         //前進,後退（高速、低速）
-        if(inputMove.Horizontal < 0.2)
-            if(inputMove.Horizontal > -0.2)
-                if(inputMove.Vertical >= 0)//前進
+        if(inputMove.Horizontal < 0.4)
+            if(inputMove.Horizontal > -0.4)
+                if(inputMove.Vertical > 0)//前進
                 {
-                    if (inputMove.Vertical > 0.2)
+                    if (inputMove.Vertical > 0.3)
                     {
+                        Debug.Log("Go front high");
                         RightMotorForward_high();
                         LeftMotorForward_high();
                     }else{
+                        Debug.Log("Go front low");
                         RightMotorForward_low();
                         LeftMotorForward_low();
                     }
 
                 }else if(inputMove.Vertical < 0)//後退
                 {
-                    if (inputMove.Vertical < -0.2)
+                    if (inputMove.Vertical < -0.3)
                     {
+                        Debug.Log("Go back high");
                         RightMotorBack_high();
                         LeftMotorBack_high();
                     }else{
+                        Debug.Log("Go back low");
                         RightMotorBack_low();
                         LeftMotorBack_low();
                     }
                 }
         // 右旋回
-        if (inputMove.Horizontal >= 0.2)
-            if(inputMove.Vertical >=0)
+        if (inputMove.Horizontal >= 0.4)
+            if(inputMove.Vertical > 0)
             {
+                Debug.Log("Right front");
                 LeftMotorForward_high(); //
                 RightMotorForward_low();
             }else{
+                Debug.Log("right back");
                 LeftMotorBack_high();
                 RightMotorBack_low();
             }
         // 左旋回
-        if (inputMove.Horizontal <= -0.2 )
-            if (inputMove.Vertical >= 0)
+        if (inputMove.Horizontal <= -0.4 )
+            if (inputMove.Vertical > 0)
             {
+                Debug.Log("left front");
                 RightMotorForward_high();
                 LeftMotorForward_low();
             }else{
+                Debug.Log("back left");
                 RightMotorBack_high();
                 LeftMotorBack_low();
             }
   
 // 超新地旋回用　あとでコメントアウトするかも  
-        if (inputMove.Vertical < 0.2)
-            if (inputMove.Vertical > -0.2)
+       /* if (inputMove.Vertical < 0.1)
+            if (inputMove.Vertical > -0.1)
             {
-                if (inputMove.Horizontal >= 0)
+                if (inputMove.Horizontal > 0)
                 {
+                    Debug.Log("Right turn");
                     LeftMotorForward_low();
                     RightMotorBack_low();
                 }else if (inputMove.Horizontal < 0){
+                    Debug.Log("left turn");
                     RightMotorForward_low();
                     LeftMotorBack_low();
                 }
-            }
+            }*/
             
         else{
-            RightMotorStop();
-            LeftMotorStop();
+        
+        //    RightMotorStop();
+          //  LeftMotorStop();
         }
     }
 
