@@ -20,8 +20,10 @@ MonoBehaviour:
     rid: 1517596886209396815
   m_OverrideGlobalSceneList: 1
   m_Scenes:
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: Assets/Scenes/2D_test/AndroidRobotController.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/3D_test/MR2OS_test1.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
@@ -289,7 +291,7 @@ MonoBehaviour:
     - line: '|   clonedFromGUID: 14e3da668dfd3496fb0ecd9272fcff02'
     - line: '|   templatePackageId: com.unity.template.mixed-reality@2.1.0'
     - line: '|   templateDefaultScene: Assets/Scenes/SampleScene.unity'
-    - line: '|   useCustomMainManifest: 0'
+    - line: '|   useCustomMainManifest: 1'
     - line: '|   useCustomLauncherManifest: 0'
     - line: '|   useCustomMainGradleTemplate: 0'
     - line: '|   useCustomLauncherGradleManifest: 0'
@@ -1068,7 +1070,7 @@ MonoBehaviour:
         m_ExportAsGoogleAndroidProject: 0
         m_DebugSymbolLevel: 1
         m_DebugSymbolFormat: 5
-        m_CurrentDeploymentTargetId: __builtin__target_default
+        m_CurrentDeploymentTargetId: 2G0YC1ZFC30282
         m_BuildType: 2
         m_BuildAppBundle: 0
         m_IPAddressToConnect: 

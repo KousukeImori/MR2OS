@@ -16,7 +16,7 @@ public class JoystiickRobotCtrl : MonoBehaviour
     {
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<Int8Msg>(topicName);
-        Time.fixedDeltaTime = 0.1f;
+        Time.fixedDeltaTime = 0.2f;
     }
 
 
