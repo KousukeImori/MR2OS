@@ -23,59 +23,60 @@ public class ControllerManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger)){
-            //Debug.Log("RightTrigger Pushed");
-            rm_pre = 1;
-            //右モータ正転
-        }
-        if (OVRInput.Get(OVRInput.RawButton.LIndexTrigger)){
-            //Debug.Log("LeftTrigger Pushed");
-            lm_pre = 1;
-            //左モータ正転
-        }
+void Update()
+{
+    rm_pre = 0;
+    lm_pre = 0;
 
-        if (OVRInput.Get(OVRInput.RawButton.RHandTrigger)){
-            //右モータ逆転
-            rm_pre = -1;
-        }
-        if (OVRInput.Get(OVRInput.RawButton.LHandTrigger)){
-            lm_pre = -1;
-        }
-        else{
-            rm_pre = 0;
-            lm_pre = 0;
-        }
-
-        if (rm_pre != rm)
-        {
-            rm = rm_pre;
-            //右モータ制御情報パブリッシュ(正転、逆転、停止)
-            if(rm == 0)
-            {
-                RightMotorStop();
-            }else if(rm == 1){
-                RightMotorForward_high();
-            }else if (rm == -1){
-                RightMotorBack_high();
-            }
-        }
-        if (lm_pre != lm)
-        {
-            lm = lm_pre;
-            //左モータ制御情報パブリッシュ
-            if (lm == 0)
-            {
-                LeftMotorStop();
-            }else if (lm == -1){
-                LeftMotorBack_high();
-            }else if(lm == 1){
-                LeftMotorForward_high();
-            }
-        }
-        
+    if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger)){
+        //Debug.Log("RightTrigger Pushed");
+        rm_pre = 1; // Right motor forward
     }
+    if (OVRInput.Get(OVRInput.RawButton.RHandTrigger)){
+        rm_pre = -1; // Right motor backward
+    }
+
+    if (OVRInput.Get(OVRInput.RawButton.LIndexTrigger)){
+        //Debug.Log("LeftTrigger Pushed");
+        lm_pre = 1; // Left motor forward
+    }
+    if (OVRInput.Get(OVRInput.RawButton.LHandTrigger)){
+        lm_pre = -1; // Left motor backward
+    }
+
+    if (rm_pre != rm)
+    {
+        rm = rm_pre;
+        if(rm == 0)
+        {
+            Debug.Log("Right stop");
+            RightMotorStop();
+        } else if(rm == 1){
+            Debug.Log("Right forward");
+            RightMotorForward_high();
+        } else if (rm == -1){
+            Debug.Log("Right back");
+            RightMotorBack_high();
+        }
+    }
+
+    if (lm_pre != lm)
+    {
+        lm = lm_pre;
+        if (lm == 0)
+        {
+            Debug.Log("Left stop");
+            LeftMotorStop();
+        } else if (lm == 1){
+            Debug.Log("Left forward");
+            LeftMotorForward_high();
+        } else if (lm == -1){
+            Debug.Log("Left back");
+            LeftMotorBack_high();
+        }
+    }
+}
+
     public void RightMotorStop()
     {
         Int8Msg int8Message = new Int8Msg(0);
