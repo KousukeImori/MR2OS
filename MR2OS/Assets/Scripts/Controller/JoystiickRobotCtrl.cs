@@ -7,6 +7,10 @@ using Oculus.Interaction.PoseDetection;
 
 public class JoystiickRobotCtrl : MonoBehaviour
 {
+    float v_pre = 0;
+    float h_pre = 0;
+
+    float h, v;
     ROSConnection ros;
     public string topicName = "crawler_ctrl";
     public FixedJoystick inputMove; //JoyStickの値を取得
@@ -16,26 +20,34 @@ public class JoystiickRobotCtrl : MonoBehaviour
     {
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<Int8Msg>(topicName);
-        Time.fixedDeltaTime = 0.2f;
+        Time.fixedDeltaTime = 0.18f;
     }
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (inputMove.Vertical == 0)
-            if(inputMove.Horizontal == 0)
+        v = inputMove.Vertical;
+        h = inputMove.Horizontal;
+    if(v == v_pre)
+    {
+
+    }
+
+    else if (v != v_pre){
+        if (v == 0)
+            if(h == 0)
             {
                 Debug.Log("stop");
                 RightMotorStop();
                 LeftMotorStop()
 ;            }
         //前進,後退（高速、低速）
-        if(inputMove.Horizontal < 0.4)
-            if(inputMove.Horizontal > -0.4)
-                if(inputMove.Vertical > 0)//前進
+        if(h < 0.4)
+            if(h > -0.4)
+                if(v > 0)//前進
                 {
-                    if (inputMove.Vertical > 0.3)
+                    if (v > 0.3)
                     {
                         Debug.Log("Go front high");
                         RightMotorForward_high();
@@ -46,9 +58,9 @@ public class JoystiickRobotCtrl : MonoBehaviour
                         LeftMotorForward_low();
                     }
 
-                }else if(inputMove.Vertical < 0)//後退
+                }else if(v < 0)//後退
                 {
-                    if (inputMove.Vertical < -0.3)
+                    if (v< -0.3)
                     {
                         Debug.Log("Go back high");
                         RightMotorBack_high();
@@ -60,8 +72,8 @@ public class JoystiickRobotCtrl : MonoBehaviour
                     }
                 }
         // 右旋回
-        if (inputMove.Horizontal >= 0.4)
-            if(inputMove.Vertical > 0)
+        if (h >= 0.4)
+            if(v > 0)
             {
                 Debug.Log("Right front");
                 LeftMotorForward_high(); //
@@ -72,8 +84,8 @@ public class JoystiickRobotCtrl : MonoBehaviour
                 RightMotorBack_low();
             }
         // 左旋回
-        if (inputMove.Horizontal <= -0.4 )
-            if (inputMove.Vertical > 0)
+        if (h <= -0.4 )
+            if (v > 0)
             {
                 Debug.Log("left front");
                 RightMotorForward_high();
@@ -105,6 +117,9 @@ public class JoystiickRobotCtrl : MonoBehaviour
         //    RightMotorStop();
           //  LeftMotorStop();
         }
+    }
+    v_pre = v;
+    h_pre = h; 
     }
 
     public void RightMotorStop()
