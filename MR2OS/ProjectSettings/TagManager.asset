@@ -26,15 +26,15 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - HiddenMesh
   - Water
   - UI
   - Spawner Contact
   - Placeable Surface
   - Curved UI
   - 
-  - 
-  - 
+  - Character
+  - MirroredCharacter
   - 
   - 
   - 

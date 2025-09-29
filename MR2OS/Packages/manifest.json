@@ -4,6 +4,7 @@
     "com.meta.xr.sdk.core": "74.0.2",
     "com.meta.xr.sdk.interaction": "74.0.2",
     "com.meta.xr.sdk.interaction.ovr": "74.0.3",
+    "com.meta.xr.sdk.movement": "https://github.com/oculus-samples/Unity-Movement.git",
     "com.unity.collab-proxy": "2.7.1",
     "com.unity.device-simulator.devices": "1.0.0",
     "com.unity.feature.development": "1.0.2",
